@@ -1,0 +1,134 @@
+{
+  "modules-left": ["clock", "custom/sep", "hyprland/workspaces"],
+  "modules-center": ["wlr/taskbar"],
+  "modules-right": [
+    "mpris",
+    "custom/sep",
+    "tray",
+    "custom/sep",
+    "custom/warp",
+    "custom/sep",
+    "battery",
+    "custom/sep",
+    "pulseaudio",
+    //"cpu",
+    //"memory",
+    //"custom/sep",
+    //"disk",
+    "custom/sep",
+    "custom/tuned",
+  ],
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%d-%m-%Y-%A}",
+    "tooltip-format": "{:%d/%m/%Y\n %A}",
+    "tooltip": true,
+  },
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "tooltip": false,
+  },
+  "memory": {
+    "format": "Mem: {used}GiB",
+  },
+  "disk": {
+    "interval": 60,
+    "path": "/",
+    "format": "Disk: {free}",
+  },
+  "battery": {
+    "states": {
+      "good": 75,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "Bat: {capacity}% {power} {icon}",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "Left {time}% ",
+    "format-time": "{H}:{M}",
+    "format-icons": ["", "", "", "", ""],
+  },
+  "custom/warp": {
+    "format": "{}", // Format is handled in the script output
+    "exec": "bash ~/.config/waybar/get_warp.sh",
+    "on-click": "bash ~/.config/waybar/warp_toggle.sh",
+    "interval": 1, // Update status every 5 seconds (optional)
+    "return-type": "json",
+    "tooltip": true,
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    },
+  },
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{status_icon} <i>{title}</i>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵",
+    },
+    "title-len": 40,
+    "status-icons": {
+      "paused": "⏸",
+    },
+    "interval": 1,
+    // "ignored-players": ["firefox"]
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "kitty-dropterm",
+      "Picture in picture",
+      "Bluetooth Devices",
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition",
+    },
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot": "Terminal",
+    },
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": "0% {icon} {format_source}",
+    "format-muted": "0% {icon} ",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+  "custom/tuned": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/tuned.sh",
+    "on-click": "~/.config/waybar/tuned.sh --click",
+    "on-click-right": "wleave",
+    "on-click-middle": "wleave",
+    "interval": 1,
+    "signal": 1,
+  },
+  "custom/sep": {
+    "format": "|",
+    "interval": 0,
+  },
+}

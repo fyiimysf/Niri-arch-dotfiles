@@ -10,24 +10,21 @@ current_status=$(get_warp_status)
 
 # Determine status text, icon, and class based on current status
 if [[ "$current_status" == "Connected" ]]; then
-  status_text="1.1.1.1"
+  status_text=" 1.1.1.1"
 #   icon="🌝" # Icon for connected
-  clr="#9ece6a"
   class="warp-connected"
   tooltip="Cloudflare Warp is Connected"
 elif [[ "$current_status" == "Disconnected" ]]; then
-  status_text="0.0.0.0"
+  status_text=" 0.0.0.0"
 #   icon="🌚" # Icon for disconnected
   class="warp-disconnected"
-  clr="#f7768e"
   tooltip="Cloudflare Warp is Disconnected"
 else
   status_text="?.?.?.?"
 #   icon="?" # Question mark icon
   class="warp-unknown"
-  clr="#4C4C4C"
   tooltip="Cloudflare Warp Status Unknown"
 fi
 
 # Output JSON for Waybar
-echo "{\"text\": \"<span color='$clr'>$status_text</span>\", \"tooltip\": \"$tooltip\", \"class\": \"$class\", \"icons\": \"<span color='$clr'>$icon</span>\"}"
+echo "{\"text\": \"$status_text $icon\", \"tooltip\": \"$tooltip\", \"class\": \"$class\", \"icons\": \"<span color='#ffffff'>$icon</span>\"}"

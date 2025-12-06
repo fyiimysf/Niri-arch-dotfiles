@@ -20,12 +20,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # export SYSTEMD_PAGER=
 
 
-alias upD='paru -Syu'
-alias pi='paru -S' 
+alias upD='paru -Syu --sudoloop'
+alias pi='paru -S'
 alias pr='paru -R'
 alias py='paru --noconfirm -S'
 # alias pry='paru -Ry'
-alias ps='paru'
+alias p='paru'
 alias ff='fastfetch'
 alias nf='neofetch'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
