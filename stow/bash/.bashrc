@@ -21,16 +21,24 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 
 alias upD='paru -Syu --sudoloop'
+# PARU
 alias pi='paru -S'
 alias pr='paru -R'
 alias py='paru --noconfirm -S'
 # alias pry='paru -Ry'
-alias p='paru'
+# YAY
+alias yi='yay -S'
+alias yr='yay -R'
+alias yy='yay --noconfirm -S'
+alias y='yay'
+
 alias ff='fastfetch'
 alias nf='neofetch'
+
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias mpvid=' mpv --really-quiet --vo=tct --vo-tct-buffering=frame'
 
+alias e='eza -l'
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then

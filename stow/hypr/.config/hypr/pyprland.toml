@@ -14,8 +14,8 @@ plugins = [
 [monitors.placement]
 "Acer".top_center_of = "Sony"
 
-[workspaces_follow_focus]
-max_workspaces = 9
+# [workspaces_follow_focus]
+# max_workspaces = 5
 
 [expose]
 include_special = false
@@ -36,8 +36,9 @@ size = "75% 40%"
 
 [scratchpads.term]
 animation = "fromTop"
-command = "kitty --class kitty-dropterm"
-class = "kitty-dropterm"
+command = "kitty --title kitty-term zsh"
+class = "kitty-term"
+lazy = true
 size = "75% 60%"
 
 [scratchpads.volume]
@@ -49,19 +50,19 @@ size = "40% 90%"
 unfocus = "hide"
 
 [scratchpads.blueman]
-animation = "fromRight"
-command = "blueman-manager"
-class = "blueman-manager-pypr"
-lazy = false
-position = "75% 2%"
-size = "20% 35%"
+animation = "fromTop"
+command = "kitty --title bluetuith --class kitty-bluetuith -e bluetuith"
+class = "kitty-bluetuith"
+lazy = true
+position = "64% 3%"
+size = "35% 35%"
 unfocus = "hide"
 
 [scratchpads.wall]
-animation = "fromRight"
+animation = "fromTop"
 command = "waypaper"
 class = "waypaper-pypr"
-lazy = true
-position = "75% 2%"
-size = "30% 45%"
+lazy = false
+# position = "75% 2%"
+size = "75% 60%"
 unfocus = "hide"

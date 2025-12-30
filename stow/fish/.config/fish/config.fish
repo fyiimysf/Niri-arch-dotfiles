@@ -36,13 +36,22 @@ alias upD='paru -Syu --sudoloop'
 alias pi='paru -S'
 alias pr='paru -R'
 alias py='paru --noconfirm -S'
-# alias pry='paru -Ry'
 alias p='paru'
+# alias pry='paru -Ry'
+
+alias yi='yay -S'
+alias yr='yay -R'
+alias yy='yay --noconfirm -S'
+alias y='yay'
+
 alias ff='fastfetch'
 alias nf='neofetch'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias mpvid=' mpv --really-quiet --vo=tct --vo-tct-buffering=frame'
 
+alias e='eza -l'
+
 
 # Created by `pipx` on 2025-06-28 16:39:14
 set PATH $PATH /home/jfifi/.local/bin
+source .venv/bin/activate.fish

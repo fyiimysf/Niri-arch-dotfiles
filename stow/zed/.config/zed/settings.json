@@ -1,0 +1,45 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent_servers": {
+    "your_agent": {
+      "type": "custom",
+      "command": "path_to_executable",
+      "args": [],
+      "env": {}
+    }
+  },
+  "terminal": {
+    "shell": {
+      "program": "/usr/bin/zsh",
+    },
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "ui_font_weight": 300.0,
+  "buffer_line_height": "comfortable",
+  "agent": {
+    "always_allow_tool_actions": false,
+    "default_model": {
+      "provider": "ollama",
+      "model": "ministral-3:3b",
+    },
+    "model_parameters": [],
+  },
+  "ui_font_size": 18.0,
+  "buffer_font_size": 15.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Base16 Embers",
+  },
+}
