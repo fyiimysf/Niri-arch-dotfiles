@@ -1,4 +1,4 @@
-# My All in One Dotfiles for Arch Linux (Hyprland, Niri, Mango)
+# My All-in-One Dotfiles for Arch Linux (Hyprland, Niri, Mango)
 
 This repository contains modular dotfiles for [Mango](https://github.com/DreamMaoMao/mangowc), [NiriWM](https://github.com/YaLTeR/niri) & [Hyprland](https://github.com/hyprwm/Hyprland) Wayland compositors on Arch Linux. _This Setup focuses mainly on ``scrolling layout``_. Configurations are managed using [GNU Stow](https://www.gnu.org/software/stow/) for easy symlinking to `~/.config/`. _**Assumes a fresh install of Arch**_
 
@@ -68,6 +68,13 @@ The script installs the following via pacman (official repos) and paru (AUR). Th
 1. **Change Shell**: `chsh -s /usr/bin/fish` (logs you out).
 2. **Hyprland Setup**:
    - Edit `~/.config/hypr/hyprland.conf` for keybinds (e.g., mod=Super, workspaces via numbers).
+   - For Scrolling Funtionality update and enable Hypr Plugings using `hyprpm`
+   - ```bash
+     hyprpm update
+     hyprpm add https://github.com/hyprwm/hyprland-plugins
+     hyprpm enable hyprscrolling
+     hyprpm enable hyprexpo
+     ```
    - Enable Hyprland session in your display manager (e.g., Ly: select "Hyprland" at login).
 3. **Niri Setup**:
    - Edit `~/.config/niri/config.kdl` for keybinds (e.g., mod=Super, workspaces via numbers).
@@ -102,23 +109,24 @@ stow -Rv -t '../../' */  # Restow changes
 
 ```
 dotfiles/
-├── README.md                 # This file
-├── setup.sh                  # Full setup script (curlable)
-├── mango/                    # Mango config (config.conf, autostart.sh)
-├── fish/                     # Fish shell (config.fish)
-├── nvim/                     # Neovim (init.lua)
-├── waybar/                   # Waybar (config.json, style.css)
-├── wezterm/                  # Wezterm (wezterm.lua)
-├── swaync/                   # Notifications
-├── fuzzel/                   # Launcher
-├── wlsunset/                 # Night light    
-├── ...                       # Other: alacritty, kitty, etc.
+├── README.md                   # This file
+├── setup.sh                    # Full setup script (curlable)
+├── stow/                       # Stow Folder for ease of organizing
+├──── mango/                    # Mango config (config.conf, autostart.sh)
+├──── fish/                     # Fish shell (config.fish)
+├──── nvim/                     # Neovim (init.lua)
+├──── waybar/                   # Waybar (config.json, style.css)
+├──── wezterm/                  # Wezterm (wezterm.lua)
+├──── swaync/                   # Notifications
+├──── fuzzel/                   # Launcher
+├──── wlsunset/                 # Night light    
+├──── ...                       # Other: alacritty, kitty, etc.
 └── LICENSE
 ```
 
 ## Contributing
 
-Fork and PR modular changes (e.g., new Mango keybinds). Test on Arch with Mango.
+Fork and PR modular changes (e.g., new keybinds or improvements). Test on Arch & Cachy OS.
 
 ## License
 
