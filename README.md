@@ -1,7 +1,6 @@
-# My MangoWM Dotfiles for Arch Linux
+# My All in One Dotfiles for Arch Linux (Hyprland, Niri, Mango)
 
-This repository contains modular dotfiles for [Mango](https://github.com/DreamMaoMao/mangowc)  Wayland compositor on Arch Linux. 
-Mango is a tiling window manager based on DWL with a focus on keyboard-driven workflows and dynamic layouts (_This Setup focuses mainly on ``scrolling layout``_). Configurations are managed using [GNU Stow](https://www.gnu.org/software/stow/) for easy symlinking to `~/.config/`. _**Assumes a fresh install of Arch**_
+This repository contains modular dotfiles for [Mango](https://github.com/DreamMaoMao/mangowc), [NiriWM](https://github.com/YaLTeR/niri) & [Hyprland](https://github.com/hyprwm/Hyprland) Wayland compositors on Arch Linux. _This Setup focuses mainly on ``scrolling layout``_. Configurations are managed using [GNU Stow](https://www.gnu.org/software/stow/) for easy symlinking to `~/.config/`. _**Assumes a fresh install of Arch**_
 
 <!-- <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/254875ee-cb75-408d-99e1-f44ba4819ece" /> -->
 
@@ -16,22 +15,22 @@ Run the complete setup script via curl on a fresh Arch install (e.g., after `arc
   1. Updates system `sudo pacman -Syu`.
   2. Installs prerequisites (git, stow, base-devel).
   7. Backs up existing `~/.config` (to `~/.config.backup`).
-  3. Clones this repo to `~/Mango-arch-dotfiles`.
+  3. Clones this repo to `~/Arch-dotfiles`.
   5. Installs AUR helpers `paru` & `yay` if missing.
   6. Installs packages (see list below).
-  8. Stows all configs (e.g., `niri/`, `fish/`, `waybar/`).
+  8. Stows all configs (e.g., `kitty/`, `fish/`, `waybar/`).
   9. Installs Ly Display Manager (optional)
 
 - **Security Note**: Review the script source from the repo before running. It requires sudo, internet, and assumes a minimal Arch base. For safety, download manually:
 ### One-Liner Installation (Requires Curl)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/fyiimysf/Mango-arch-dotfiles/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/fyiimysf/Arch-dotfiles/main/setup.sh | bash
 ```
 *OR*
 ### Cloning the repo:
 ```bash
-git clone --depth=1 https://github.com/fyiimysf/Mango-arch-dotfiles.git
-cd ~/Mango-arch-dotfiles
+git clone --depth=1 https://github.com/fyiimysf/Arch-dotfiles.git
+cd ~/Arch-dotfiles
 chmod +x setup.sh
 ./setup.sh
 ```
@@ -39,8 +38,8 @@ chmod +x setup.sh
 - **Only Stow**: Only to stow to `~/.config`:
 ```bash
 cp -r ~/.config ~/.config.backup
-git clone --depth=1 https://github.com/fyiimysf/Mango-arch-dotfiles.git
-cd ~/Mango-arch-dotfiles
+git clone --depth=1 https://github.com/fyiimysf/Arch-dotfiles.git
+cd ~/Arch-dotfiles
 chmod +x stow.sh
 ./stow.sh
 ```
@@ -51,37 +50,43 @@ chmod +x stow.sh
 The script installs the following via pacman (official repos) and paru (AUR). These support MangoWM, shells, editing, and Wayland essentials:
 
 ### Official (pacman):
-- Core: `git`, `stow`, `nvim`, `curl`, `brightnessctl`, `x11`, `wlroots`, `wayland`
-- Shell/Terminal: `fish`, `foot`, `wezterm`, `alacritty`, `kitty`
-- Wayland/UI: `mango` (compositor), `swaync` (notifications), `swayidle` (idle), `waybar` (bar), `wlogout` (logout), `fuzzel` (launcher),  `rofi` (launcher), `cliphist` (clipboard), `wlsunset` (night light), `waypaper` (wallpaper manager), `swww` (wallpaper package)
+- Core: `git`, `stow`, `nvim`, `curl`, `brightnessctl`, `x11`, `wlroots`, `wayland`, `ntfs-3g`
+- Shell/Terminal: `fish`, `foot`, `ghostty`, `alacritty`, `kitty`, `zsh`
+- Wayland/UI: `hyprland`, `mango` ,`niri`  (compositor), `swaync` (notifications), `swayidle` (idle), `waybar` (bar), `wlogout` (logout), `fuzzel` (launcher),  `rofi` (launcher), `cliphist` (clipboard), `wlsunset` (night light), `waypaper` (wallpaper manager), `swww` (wallpaper package)
 - Utilities: `fastfetch` (info), `nemo` (file manager), `gdu` (disk), `yazi` (terminal FM), `gnome-calculator`, `librewolf` (browser)
 
 ### AUR (paru):
-- `avizo` (notifications), `xwayland-satellite` (XWayland compat), `tuned` (tuning), `hyprlock` (locker), `hyprpicker` (picker), `grim` (screenshots), `slurp` (screenshot utility)
+- `avizo` (notifications), `xwayland-satellite` (XWayland compat), `tuned` (tuning), `hyprlock` (locker), `hyprpicker` (picker), `grim` (screenshots), `slurp` (screenshot utility), `tesseract` (text extracting utility)
 
 **Notes**:
-- ~37 packages total; AUR builds may take 5-15 minutes (needs RAM/disk space).
+- ~43 packages total; AUR builds may take 5-15 minutes (needs RAM/disk space).
 - If AUR fails (e.g., dependencies), run `paru -Syu` and retry manually.
 - Mango-specific: Mango Focused WM setup.
 - Ly DM: Installs and Enables Ly as the Display Manager of choice (optional)
 ## Post-Installation
 
 1. **Change Shell**: `chsh -s /usr/bin/fish` (logs you out).
-2. **Mango Setup**:
+2. **Hyprland Setup**:
+   - Edit `~/.config/hypr/hyprland.conf` for keybinds (e.g., mod=Super, workspaces via numbers).
+   - Enable Hyprland session in your display manager (e.g., Ly: select "Hyprland" at login).
+3. **Niri Setup**:
+   - Edit `~/.config/niri/config.kdl` for keybinds (e.g., mod=Super, workspaces via numbers).
+   - Enable Niri session in your display manager (e.g., Ly: select "Niri" at login).
+4. **Mango Setup**:
    - Edit `~/.config/mango/config.conf` for keybinds (e.g., mod=Super, workspaces via numbers).
    - Enable Mango session in your display manager (e.g., Ly: select "Mango" at login).
-3. **Neovim**: `nvim +Lazy sync` (assumes Lazy.nvim; adjust for your plugin manager).
-4. **Wayland Tools**:
-   - Start Waybar: Add to Mango config or run `waybar &`.
-   - Clipboard: Add `cliphist watch` to startup (e.g., via Mango exec-once).
+5. **Neovim**: `nvim +Lazy sync` (assumes Lazy.nvim; adjust for your plugin manager).
+6. **Wayland Tools**:
+   - Start Waybar: Add to config or run `waybar & disown`.
+   - Clipboard: Add `cliphist watch` to startup (e.g., via exec-once).
    - Notifications: `swaync-client -o` to test.
    - Screenshots: Bind `grim` in Mango config.
-5. **Reboot/Log Out**: Start Mango session. Verify: `ls -la ~/.config | grep -E "(mango|waybar|fish|nvim)"`.
-6. **Customization**: Test selectively—unstow with `stow -D <package>` if issues.
+7. **Reboot/Log Out**: Start Session. Verify: `ls -la ~/.config | grep -E "(mango|waybar|fish|nvim)"`.
+8. **Customization**: Test selectively—unstow with `stow -D <package>` if issues.
 
 ## Updates & Maintenance
 
-From `~/Mango-arch-dotfiles`:
+From `~/Arch-dotfiles`:
 ```bash
 git pull
 cd stow
@@ -90,8 +95,8 @@ stow -Rv -t '../../' */  # Restow changes
 - For package updates: `sudo pacman -Syu; paru -Syu`.
 - Troubleshooting:
   - Stow conflicts: Use dry-run (`stow -n -v <package>`).
-  - Mango Issues: Check `journalctl -b -u ly`.
-  - Permissions: `chown -R $USER:$USER ~/dotfiles`.
+  - WM Issues: Check `journalctl -b -u ly`.
+  - Permissions: `chown -R $USER:$USER ~/Arch-dotfiles`.
 
 ## Directory Structure
 
