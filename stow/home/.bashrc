@@ -21,6 +21,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 
 alias upD='paru -Syu --sudoloop'
+alias pacman='sudo pacman'
 # PARU
 alias pi='paru -S'
 alias pr='paru -R'
@@ -52,4 +53,4 @@ unset rc
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)

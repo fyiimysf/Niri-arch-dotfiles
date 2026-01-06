@@ -1,10 +1,12 @@
 {
-  "modules-left": ["clock", "custom/sep", "wlr/taskbar"],
+  "layer": "top",
+  // "height": 36,
+  "modules-left": ["clock", "custom/sep", "wlr/taskbar", "mpris"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
-    "mpris",
-    "custom/sep",
     "tray",
+    // "custom/sep",
+    "bluetooth",
     "custom/sep",
     "custom/warp",
     "custom/sep",
@@ -18,7 +20,8 @@
     "custom/sep",
     "custom/tuned",
   ],
-
+  // WAYBAR CSS
+  // ~/.config/hypr/waybar/style.css
   "clock": {
     "format": "{:%I:%M %p}",
     "format-alt": "{:%d-%m-%Y-%A}",
@@ -44,9 +47,9 @@
       "critical": 15,
     },
     "interval": 1,
-    "format": "Bat: {capacity}% {power} {icon}",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "Left {time}% ",
+    "format": "{icon} {capacity}% {power}",
+    "format-plugged": "{capacity}%",
+    "format-alt": "Left {time}",
     "format-time": "{H}:{M}",
     "format-icons": ["", "", "", "", ""],
   },
@@ -67,9 +70,12 @@
       // "2": "",
       // "3": "",
       // "4": "",
-      // "5": "",
-      "active": "",
+      // "8": "",
+      "9": "",
+      // "active": "",
       "default": "",
+      "special": "",
+      "hide-active": true,
     },
   },
   "mpris": {
@@ -94,6 +100,7 @@
     "on-click-middle": "close",
     "ignore-list": [
       "kitty-dropterm",
+      "kitty-bluetuith",
       "Picture in picture",
       "Bluetooth Devices",
     ],
@@ -105,6 +112,19 @@
       "Foot": "Terminal",
     },
   },
+  "bluetooth": {
+    "format": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "on-click": "bash -c 'pypr-client toggle blue'",
+    // "format-device-preference": ["device1", "device2"], // preference list deciding the displayed device {device_battery_percentage}%
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+  },
+
   "pulseaudio": {
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon} {format_source}",

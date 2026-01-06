@@ -15,9 +15,9 @@
 
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
-    padding: 0 4px;
+    padding: 0 2px;
 }
 
 window#waybar {
@@ -26,13 +26,17 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 1px;
+    padding: 0 0px;
     /*color: @mag;
     background: transparent;
     border-bottom: 3px solid @bg;*/
 }
 #workspaces button.active {
     color: @cyn;
+    /*margin: -5px;*/
+    /*border-radius: 28px;
+    padding: 0 4px;
+    background-color: @cyn;*/
     /*border-bottom: 3px solid @cyn;*/
 }
 
@@ -45,7 +49,7 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    background-color: @red;
+    color: @red;
 }
 
 button:hover {
@@ -58,6 +62,7 @@ button:hover {
 #clock,
 #custom-sep,
 #battery,
+#bluetooth,
 #cpu,
 #memory,
 #disk,
@@ -66,11 +71,24 @@ button:hover {
 #custom-warp,
 #mpris,
 #tray {
-    padding: 0 4px;
+    padding: 0 2px;
+}
+
+#bluetooth:hover {
+    color: rgba(98, 114, 164, 0.9);
+}
+
+#bluetooth.connected {
+    color: rgba(170, 255, 127, 0.7);
+}
+
+#bluetooth.disconnected {
+    color: rgba(255, 85, 85, 0.5);
 }
 
 #custom-sep {
     color: @brblk;
+    padding: 0 4px;
 }
 
 #clock {
@@ -116,15 +134,15 @@ button:hover {
 }
 
 #custom-tuned.balanced {
-    padding-right: 8;
-    padding-left: 6;
+    padding-right: 12;
+    padding-left: 7;
 
     background-color: @mag;
 }
 
 #custom-tuned.accelerator-performance {
     padding-left: 2;
-    padding-right: 2;
+    padding-right: 4;
 
     background-color: @red;
 
@@ -132,7 +150,7 @@ button:hover {
 }
 
 #custom-tuned.powersave {
-    padding-right: 7;
+    padding-right: 12;
     padding-left: 7;
 
     background-color: @grn;

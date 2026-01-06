@@ -33,6 +33,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 alias upD='paru -Syu --sudoloop'
+alias pacman='sudo pacman'
 alias pi='paru -S'
 alias pr='paru -R'
 alias py='paru --noconfirm -S'

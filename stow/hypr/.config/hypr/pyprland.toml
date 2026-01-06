@@ -49,7 +49,7 @@ lazy = true
 size = "40% 90%"
 unfocus = "hide"
 
-[scratchpads.blueman]
+[scratchpads.blue]
 animation = "fromTop"
 command = "kitty --title bluetuith --class kitty-bluetuith -e bluetuith"
 class = "kitty-bluetuith"
