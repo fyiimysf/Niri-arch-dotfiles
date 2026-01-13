@@ -1,15 +1,18 @@
 :root {
-    --border-radius: 22px;
+    --border-radius: 20px;
     --cc-bg: transparent;
 
-    --widget-background: rgba(46, 46, 46, 0.7);
-    --noti-bg-alpha: 0.6;
+    --widget-background: #2980bf10;
+
+    /*--noti-bg: #2980bf99#2980bf10;*/
+    --noti-bg-alpha: 0.1;
 
     --padding: calc(var(--border-radius) / 2);
 }
 
 .control-center {
     border-radius: 0;
+    box-shadow: 10cap;
 }
 
 .widgets > .widget,
@@ -27,6 +30,14 @@
 
 .notification-group {
     border-radius: var(--border-radius);
+    background-color: transparent;
+    padding: 8px;
+}
+
+.notification {
+    border-radius: var(--border-radius);
+    border-width: 0;
+    /*background-color: transparent;*/
     padding: 8px;
 }
 
@@ -45,7 +56,7 @@
     margin-top: var(--padding);
 }
 .widget-mpris > box > button:hover {
-    background: rgba(46, 46, 46, 1);
+    background: #2980b9;
 }
 .widget-mpris-player {
     box-shadow: none;

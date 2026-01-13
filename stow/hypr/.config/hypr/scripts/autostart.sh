@@ -17,7 +17,8 @@ swaync &
 hyprsunset -t 4000 &
 
 # applets
-nm-applet & blueman-applet &
+nm-applet &
+# blueman-applet &
 
 # swayosd
 swayosd-server &
@@ -27,7 +28,7 @@ pypr &
 
 # wallpaper
 #swaybg -i ~/.config/mango/wallpaper/room.png &
-#waypaper --restore &
+waypaper --restore &
 
 # top bar
 waybar -c ~/.config/hypr/waybar/config.jsonc -s ~/.config/hypr/waybar/style.css &

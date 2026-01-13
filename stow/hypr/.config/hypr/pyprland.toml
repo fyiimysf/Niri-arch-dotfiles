@@ -11,8 +11,8 @@ plugins = [
   "fetch_client_menu"
 ]
 
-[monitors.placement]
-"Acer".top_center_of = "Sony"
+# [monitors.placement]
+# "Acer".top_center_of = "Sony"
 
 # [workspaces_follow_focus]
 # max_workspaces = 5
@@ -20,26 +20,35 @@ plugins = [
 [expose]
 include_special = false
 
-[scratchpads.stb]
-animation = "fromBottom"
-command = "kitty --class kitty-stb sstb"
-class = "kitty-stb"
-lazy = true
-size = "75% 45%"
+# [scratchpads.stb]
+# animation = "fromBottom"
+# command = "kitty --class kitty-stb sstb"
+# class = "kitty-stb"
+# lazy = true
+# size = "75% 45%"
 
-[scratchpads.stb-logs]
-animation = "fromTop"
-command = "kitty --class kitty-stb-logs stbLog"
-class = "kitty-stb-logs"
-lazy = true
-size = "75% 40%"
+# [scratchpads.stb-logs]
+# animation = "fromTop"
+# command = "kitty --class kitty-stb-logs stbLog"
+# class = "kitty-stb-logs"
+# lazy = true
+# size = "75% 40%"
 
 [scratchpads.term]
 animation = "fromTop"
 command = "kitty --title kitty-term zsh"
 class = "kitty-term"
 lazy = true
+size = "75% 90%"
+unfocus = "hide"
+
+[scratchpads.btop]
+animation = "fromTop"
+command = "alacritty -T btop-term -e btop"
+class = "btop-term"
+lazy = true
 size = "75% 60%"
+unfocus = "hide"
 
 [scratchpads.volume]
 animation = "fromRight"
@@ -49,7 +58,7 @@ lazy = true
 size = "40% 90%"
 unfocus = "hide"
 
-[scratchpads.blueman]
+[scratchpads.blue]
 animation = "fromTop"
 command = "kitty --title bluetuith --class kitty-bluetuith -e bluetuith"
 class = "kitty-bluetuith"
@@ -58,11 +67,11 @@ position = "64% 3%"
 size = "35% 35%"
 unfocus = "hide"
 
-[scratchpads.wall]
-animation = "fromTop"
-command = "waypaper"
-class = "waypaper-pypr"
-lazy = false
-# position = "75% 2%"
-size = "75% 60%"
-unfocus = "hide"
+# [scratchpads.wall]
+# animation = "fromTop"
+# command = "waypaper"
+# class = "waypaper-pypr"
+# lazy = false
+# # position = "75% 2%"
+# size = "75% 60%"
+# unfocus = "hide"

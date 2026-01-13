@@ -1,1 +1,1 @@
-grim -g "$(slurp)" - | tesseract -l urd stdin stdout | wl-copy
+grim -g "$(slurp)" - | tesseract -l eng stdin stdout | wl-copy

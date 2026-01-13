@@ -1,10 +1,12 @@
 {
-  "modules-left": ["clock", "custom/sep", "wlr/taskbar"],
+  "layer": "top",
+  // "height": 36,
+  "modules-left": ["clock", "custom/sep", "wlr/taskbar", "mpris"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
-    "mpris",
-    "custom/sep",
     "tray",
+    // "custom/sep",
+    "bluetooth",
     "custom/sep",
     "custom/warp",
     "custom/sep",
@@ -18,7 +20,8 @@
     "custom/sep",
     "custom/tuned",
   ],
-
+  // WAYBAR CSS
+  // ~/.config/hypr/waybar/style.css
   "clock": {
     "format": "{:%I:%M %p}",
     "format-alt": "{:%d-%m-%Y-%A}",
@@ -44,9 +47,9 @@
       "critical": 15,
     },
     "interval": 1,
-    "format": "Bat: {capacity}% {power} {icon}",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "Left {time}% ",
+    "format": "{icon} {capacity}% {power}",
+    "format-plugged": " {capacity}%",
+    "format-alt": "Left {time}",
     "format-time": "{H}:{M}",
     "format-icons": ["", "", "", "", ""],
   },
@@ -62,15 +65,42 @@
     "format": "{icon}",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "format-icons": {
-      // "1": "",
-      // "2": "",
-      // "3": "",
-      // "4": "",
-      // "5": "",
-      "active": "",
-      "default": "",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5], // 5 workspaces by default on every monitor
+      // "HDMI-A-1": 3, // but only three on HDMI-A-1
     },
+    // "format-icons": {
+    // "1": "",
+    // "2": "",
+    // "3": "",
+    // "4": "",
+    // "8": "",
+    // "9": " 9",
+    // "active": "",
+    // "default": "",
+    // "special": "",
+    // "hide-active": true,
+    // "show-special": true,
+    // "special-visible-only": true,
+    // },
+    // Map numbers to Roman numerals
+    // "format-icons": {
+    //   "1": "I",
+    //   "2": "II",
+    //   "3": "III",
+    //   "4": "IV",
+    //   "5": "V",
+    //   "6": "VI",
+    //   "7": "VII",
+    //   "8": "VIII",
+    //   "9": "IX",
+    //   "10": "X",
+    //   "11": "XI",
+    //   "12": "XII",
+    //   "13": "XIII",
+    //   "14": "XIV",
+    //   "15": "XV",
+    // },
   },
   "mpris": {
     "format": "{player_icon} {title}",
@@ -93,7 +123,9 @@
     "on-click": "activate",
     "on-click-middle": "close",
     "ignore-list": [
-      "kitty-dropterm",
+      "kitty-term",
+      "btop-term",
+      "kitty-bluetuith",
       "Picture in picture",
       "Bluetooth Devices",
     ],
@@ -105,10 +137,23 @@
       "Foot": "Terminal",
     },
   },
+  "bluetooth": {
+    "format": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {icon} ",
+    "format-icons": ["", "", "", "", ""],
+    "on-click": "bash -c 'pypr toggle blue'",
+    // "format-device-preference": ["device1", "device2"], // preference list deciding the displayed device {device_battery_percentage}%
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+  },
+
   "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": "0% {icon} {format_source}",
+    "format": "{volume}% {icon} ",
+    "format-bluetooth": "{volume}% {icon}  {format_source} ",
+    "format-bluetooth-muted": "0% {icon}  {format_source} ",
     "format-muted": "0% {icon} ",
     "format-source": "{volume}% ",
     "format-source-muted": "",

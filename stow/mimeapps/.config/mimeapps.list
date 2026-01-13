@@ -1,12 +1,22 @@
 [Default Applications]
 application/x-terminal-emulator=foot.desktop
-text/plain=org.xfce.mousepad.desktop
-text/x-csrc=org.gnome.TextEditor.desktop
-x-scheme-handler/terminal=foot.desktop
 audio/mpeg=org.gnome.Decibels.desktop
 image/png=feh.desktop
+text/html=helium.desktop
+text/plain=com.system76.CosmicEdit.desktop
+text/x-csrc=org.gnome.TextEditor.desktop
+text/x-python=zeditor.desktop
+x-scheme-handler/about=helium.desktop
+x-scheme-handler/http=helium.desktop
+x-scheme-handler/https=helium.desktop
+x-scheme-handler/terminal=foot.desktop
+x-scheme-handler/unknown=helium.desktop
+x-scheme-handler/fdm=freedownloadmanager_fdm_up.desktop
+x-scheme-handler/magnet=freedownloadmanager_magnet_up.desktop
+application/x-bittorrent=freedownloadmanager_torrent.desktop
 
 [Added Associations]
+audio/mpeg=org.gnome.Decibels.desktop
+image/png=feh.desktop
 text/x-csrc=org.gnome.TextEditor.desktop
-audio/mpeg=org.gnome.Decibels.desktop;
-image/png=feh.desktop;
+text/x-python=zeditor.desktop
