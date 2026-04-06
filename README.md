@@ -47,21 +47,21 @@ chmod +x stow.sh
 
 ## Packages Installed
 
-The script installs the following via pacman (official repos) and paru (AUR). These support MangoWM, shells, editing, and Wayland essentials:
+The script installs the following via pacman (official repos) and paru (AUR). These support Window Manager, shells, editing, and Wayland essentials:
 
 ### Official (pacman):
 - Core: `git`, `stow`, `nvim`, `curl`, `brightnessctl`, `x11`, `wlroots`, `wayland`, `ntfs-3g`
 - Shell/Terminal: `fish`, `foot`, `ghostty`, `alacritty`, `kitty`, `zsh`
-- Wayland/UI: `hyprland`, `mango` ,`niri`  (compositor), `swaync` (notifications), `swayidle` (idle), `waybar` (bar), `wlogout` (logout), `fuzzel` (launcher),  `rofi` (launcher), `cliphist` (clipboard), `wlsunset` (night light), `waypaper` (wallpaper manager), `swww` (wallpaper package)
+- Wayland/UI: `hyprland`, `mango` ,`niri`  (compositor), `swaync` (notifications), `swayidle` (idle), `waybar` (bar), `wlogout` (logout), `fuzzel` (launcher),  `rofi` (launcher), `cliphist` (clipboard), `wlsunset` (night light), `waypaper` (wallpaper manager), `awww` (wallpaper package)
 - Utilities: `fastfetch` (info), `nemo` (file manager), `gdu` (disk), `yazi` (terminal FM), `gnome-calculator`, `librewolf` (browser)
 
 ### AUR (paru):
-- `avizo` (notifications), `xwayland-satellite` (XWayland compat), `tuned` (tuning), `hyprlock` (locker), `hyprpicker` (picker), `grim` (screenshots), `slurp` (screenshot utility), `tesseract` (text extracting utility)
+- `pOSD` (OSD for Volume and Brightness), `xwayland-satellite` (XWayland compat), `tuned` (tuning), `hyprlock` (locker), `hyprpicker` (picker), `grim` (screenshots), `slurp` (screenshot utility), `tesseract` (text extracting utility)
 
 **Notes**:
 - ~43 packages total; AUR builds may take 5-15 minutes (needs RAM/disk space).
 - If AUR fails (e.g., dependencies), run `paru -Syu` and retry manually.
-- Mango-specific: Mango Focused WM setup.
+- Hyperland-specific: Hyprland Focused WM setup.
 - Ly DM: Installs and Enables Ly as the Display Manager of choice (optional)
 ## Post-Installation
 
